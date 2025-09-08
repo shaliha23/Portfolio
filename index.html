@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaliha S — Android Developer (Kotlin • Jetpack Compose)</title>
+  <meta name="description" content="Portfolio of Shaliha S — B.Sc IT (2nd year) at RD National College, Erode. Android app developer specializing in Kotlin and Jetpack Compose. Full‑stack apps: frontend + backend." />
+  <meta name="author" content="Shaliha S" />  <!-- Open Graph for nice link previews -->  <meta property="og:title" content="Shaliha S — Android Developer" />
+  <meta property="og:description" content="Kotlin • Jetpack Compose • Full‑stack Android apps" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/preview.png" />  <link rel="icon" href="/favicon.ico" />  <style>
+    :root{
+      --bg:#0b0c10; /* backdrop */
+      --panel:#12141a; /* cards */
+      --ink:#e8eaf0;  /* text */
+      --muted:#9aa3b2; /* secondary text */
+      --brand:#7c5cff; /* primary */
+      --brand-2:#16e0bd; /* accent */
+      --stroke:#242732; /* borders */
+      --glow:0 10px 30px rgba(124,92,255,.25);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f6f7fb; --panel:#ffffff; --ink:#0b0c10; --muted:#5b6472; --stroke:#e6e7ee; }
+      .hero-title { text-shadow: none; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.15), transparent), var(--bg);color:var(--ink)}
+
+    /* Layout */
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient( to bottom, rgba(11,12,16,.9), rgba(11,12,16,.65) );backdrop-filter: blur(6px);z-index:10;border-bottom:1px solid var(--stroke)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav a{color:var(--ink);text-decoration:none;opacity:.9}
+    .nav .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.3px}
+    .logo{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 200deg, var(--brand), var(--brand-2));box-shadow:var(--glow)}
+    .links{display:flex;gap:18px}
+    .menu-btn{display:none}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--stroke);border-radius:12px;background:var(--panel);color:var(--ink);text-decoration:none;font-weight:600}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#5f3dff);border-color:transparent;box-shadow:var(--glow)}
+    .btn.ghost{background:transparent}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:48px 0}
+    .hero-title{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 12px;text-shadow:0 10px 30px rgba(124,92,255,.3)}
+    .hero-sub{font-size:clamp(16px,2.2vw,18px);color:var(--muted);margin:0 0 22px}
+    .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 22px}
+    .tag{padding:8px 12px;border:1px solid var(--stroke);border-radius:999px;background:rgba(124,92,255,.08)}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:20px}
+    .profile{aspect-ratio:1/1;border-radius:16px;background:
+      radial-gradient(60% 60% at 60% 0%, rgba(124,92,255,.35), transparent 60%),
+      radial-gradient(60% 60% at 0% 80%, rgba(22,224,189,.25), transparent 60%),
+      linear-gradient(180deg, #0f1118, #0b0c10);
+      border:1px solid var(--stroke);display:grid;place-items:center;position:relative}
+    .profile .initials{font-size:42px;font-weight:900;opacity:.95}
+    .profile .badge{position:absolute;bottom:10px;right:10px;background:var(--brand);color:white;padding:6px 10px;border-radius:999px;font-size:12px;box-shadow:var(--glow)}
+
+    /* Sections */
+    section{padding:28px 0}
+    .section-title{font-size:22px;margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{display:flex;flex-direction:column;gap:10px}
+    .project h3{margin:0;font-size:16px}
+    .muted{color:var(--muted)}
+
+    /* Footer */
+    footer{border-top:1px solid var(--stroke);padding:24px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .links{display:none}
+      .menu-btn{display:inline-flex}
+      .grid{grid-template-columns:1fr}
+      .container{padding:16px}
+    }
+  </style></head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Shaliha<span style="opacity:.55"></span></span>
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:ss5128461@gmail.com" class="btn ghost" aria-label="Email">Email</a>
+      </nav>
+      <button class="menu-btn btn ghost" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMenu()">Menu</button>
+    </div>
+    <div id="mobileNav" hidden class="container" style="padding-top:0;padding-bottom:16px">
+      <div class="card" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="mailto:ss5128461@gmail.com">Email</a>
+      </div>
+    </div>
+  </header>  <main id="home" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Hi, I’m <span style="color:var(--brand)">Shaliha S</span> — Android App Developer</h1>
+        <p class="hero-sub">B.Sc IT, 2nd year — RD National College, Erode. I build full Android apps (frontend + backend) using <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>, with clean architecture and a focus on smooth UI/UX.</p>
+        <div class="tagrow" aria-label="Tech stack">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">Android Studio</span>
+          <span class="tag">Room / SQLite</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Git/GitHub</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+          <button class="btn ghost" onclick="copyEmail()" aria-label="Copy email">Copy Email</button>
+        </div>
+      </div>
+      <div class="card profile" aria-label="Profile image placeholder">
+        <!-- Replace this block with your photo: <img src="/me.jpg" alt="Shaliha S" class="profile" /> -->
+        <div class="initials" aria-hidden="true">SS</div>
+        <div class="badge" aria-hidden="true">Android • Kotlin</div>
+      </div>
+    </section><!-- Skills -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Android (Compose‑first)</h3>
+      <p class="muted">Compose UI, Navigation, ViewModel, Coroutines/Flow, Material 3, state management.</p>
+    </div>
+    <div class="card">
+      <h3>Data & Backend</h3>
+      <p class="muted">Room/SQLite, Firebase (Auth/Firestore/Storage), REST API integration, JSON, pagination.</p>
+    </div>
+    <div class="card">
+      <h3>Architecture & Quality</h3>
+      <p class="muted">MVVM, Clean Architecture, DI basics, offline‑first patterns, testing fundamentals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="grid">
+    <article class="card project">
+      <h3>This or That — Quiz App</h3>
+      <p class="muted">Composable quiz engine with local DB, per‑question feedback, and animated alerts using a custom <code>SmartAlert()</code> component.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#" onclick="alert('Add your GitHub link here')">View Code</a>
+        <a class="btn ghost" href="#" onclick="alert('Add your APK link here')">Download APK</a>
+      </div>
+    </article>
+    <article class="card project">
+      <h3>Student Attendance Tracker</h3>
+      <p class="muted">Donut chart UI + calendar heatmap; marks Present/Absent/Holiday with 75% eligibility check. Syncs with database.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#" onclick="alert('Add your GitHub link here')">View Code</a>
+        <a class="btn ghost" href="#" onclick="alert('Add your case study link here')">Case Study</a>
+      </div>
+    </article>
+    <article class="card project">
+      <h3>Video Uploader (Gallery → Play on tap)</h3>
+      <p class="muted">Stores thumbnail + name, avoids auto‑play, and plays only on explicit tap. Styled UI with cloud upload icon.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#" onclick="alert('Add your GitHub link here')">View Code</a>
+        <a class="btn ghost" href="#" onclick="alert('Add store or demo link here')">Live Demo</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2 class="section-title">Let’s build something</h2>
+  <div class="card" style="display:grid;gap:14px">
+    <p>Open to internships, freelance, and collaborations. Best way to reach me is email.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <a class="btn primary" href="mailto:ss5128461@gmail.com">Email: ss5128461@gmail.com</a>
+      <button class="btn" onclick="copyEmail()">Copy email</button>
+    </div>
+    <p class="muted" style="margin:0">Erode • India • IST (UTC+5:30)</p>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <span>© <span id="y"></span> Shaliha S</span>
+      <span class="muted">Built with semantic HTML & a dash of CSS ✨</span>
+    </div>
+  </footer>  <script>
+    const EMAIL = "ss5128461@gmail.com";
+    function copyEmail(){
+      navigator.clipboard.writeText(EMAIL).then(()=>{
+        toast(Email copied: ${EMAIL})
+      }).catch(()=>{ alert(EMAIL); });
+    }
+    function toggleMenu(){
+      const nav = document.getElementById('mobileNav');
+      const btn = document.querySelector('.menu-btn');
+      const open = nav.hasAttribute('hidden');
+      if(open){ nav.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      else{ nav.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    }
+    // tiny toast
+    const toast = (msg)=>{
+      let t = document.createElement('div');
+      t.textContent = msg;
+      t.style.position='fixed'; t.style.bottom='24px'; t.style.left='50%'; t.style.transform='translateX(-50%)';
+      t.style.background='var(--panel)'; t.style.border='1px solid var(--stroke)'; t.style.padding='10px 14px';
+      t.style.borderRadius='12px'; t.style.boxShadow='var(--glow)'; t.style.zIndex='100';
+      document.body.appendChild(t); setTimeout(()=>t.remove(), 2200);
+    };
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>  <!--
+    Quick how‑to:
+    1) Replace the profile placeholder with your photo (512x512 works well).
+    2) Add real GitHub / APK / Demo links in the Projects section.
+    3) Update /preview.png and /favicon.ico for better sharing/branding.
+  -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shaliha S",
+    "email": "mailto:ss5128461@gmail.com",
+    "jobTitle": "Android Developer",
+    "alumniOf": {"@type":"CollegeOrUniversity","name":"RD National College, Erode"},
+    "knowsAbout": ["Kotlin", "Jetpack Compose", "Android", "Firebase", "SQLite", "REST APIs"],
+    "address": {"@type":"PostalAddress","addressLocality":"Erode","addressCountry":"IN"}
+  }
+  </script></body>
+</html>
